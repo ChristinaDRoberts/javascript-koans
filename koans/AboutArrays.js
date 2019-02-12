@@ -12,7 +12,7 @@ describe("About Arrays", function() {
     expect(multiTypeArray[3]()).toBe(3);
     expect(multiTypeArray[4].value1).toBe(4);
     expect(multiTypeArray[4]["value2"]).toBe(5);
-    expect(multiTypeArray[5][0]).toBe();
+    expect(multiTypeArray[5][0]).toBe(6);
   });
 
   it("should understand array literals", function () {
@@ -33,6 +33,7 @@ describe("About Arrays", function() {
     var fourNumberArray = [1, 2, 3, 4];
 
     expect(fourNumberArray.length).toBe(4);
+
     fourNumberArray.push(5, 6);
     expect(fourNumberArray.length).toBe(6);
 
@@ -43,16 +44,18 @@ describe("About Arrays", function() {
     expect(tenEmptyElementArray.length).toBe(5);
   });
 
+
+  //if it doesnt exist, its an empty array,
   it("should slice arrays", function () {
     var array = ["peanut", "butter", "and", "jelly"];
 
-    expect(array.slice(0, 1)).toEqual("peanut");
-    expect(array.slice(0, 2)).toEqual("peanut", "butter");
-    expect(array.slice(2, 2)).toEqual(null);
-    expect(array.slice(2, 20)).toEqual("and", "jelly");
-    expect(array.slice(3, 0)).toEqual("jelly");
-    expect(array.slice(3, 100)).toEqual("jelly");
-    expect(array.slice(5, 1)).toEqual(null);
+    expect(array.slice(0, 1)).toEqual([ 'peanut' ]);
+    expect(array.slice(0, 2)).toEqual([ "peanut", "butter" ]);
+    expect(array.slice(2, 2)).toEqual([]);
+    expect(array.slice(2, 20)).toEqual([ "and", "jelly" ]);
+    expect(array.slice(3, 0)).toEqual([ ]);
+    expect(array.slice(3, 100)).toEqual([ 'jelly']);
+    expect(array.slice(5, 1)).toEqual([ ]);
   });
 
   it("should know array references", function () {

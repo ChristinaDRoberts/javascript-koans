@@ -58,6 +58,13 @@ describe("About Functions", function() {
 
 
   //***************COMEBACK TO THIS ONE***********************
+
+
+
+
+
+
+
   it("should allow extra function arguments", function () {
 
     function returnFirstArg(firstArg) {
@@ -70,7 +77,7 @@ describe("About Functions", function() {
       return secondArg;
     }
 
-    expect(returnSecondArg("only give first arg")).toBe("only give first arg");
+    expect(returnSecondArg("only give first arg")).toBe(undefined);
 
     function returnAllArgs() {
       var argsArray = [];
@@ -80,7 +87,7 @@ describe("About Functions", function() {
       return argsArray.join(",");
     }
 
-    expect(returnAllArgs("first", "second", "third")).toBe("first, second, third");
+    expect(returnAllArgs("first", "second", "third")).toBe("first,second,third");
   });
 
   it("should pass functions as values", function () {
